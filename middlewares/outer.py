@@ -19,18 +19,19 @@ class CheckUserIdMiddleware(BaseMiddleware):
             event: TelegramObject,
             data: Dict[str, Any]
     ) -> Any:
-        print(data)
         user: User = data.get('event_from_user')
         bot = data.get('bot')
 
-        logger.info(f"Middleware, user: {user}, user.id: {user.id}")
+        logger.debug(f"Middleware (outer). Message from user.username: {user.username}, user.id: {user.id}")
 
         if not user.id == main_user_id:
-            logger.info(f"Message from unknown user. User: id={user.id}, username={user.username}")
+            logger.info(f"Message from unknown user: user.id: {user.id}, user.username: {user.username}")
             try:
                 await bot.send_message(chat_id=user.id, text=LEXICON_RU['unknown_user'])
             except Exception as e:
-                logger.error(f"Failed to send message to user {user.id}: {e}")
+                logger.error(f"Failed to reply to user {user.id}: {e}")
             return
+
+        logger.debug(f"Middleware (outer). Message is allowed to reach handlers")
 
         return await handler(event, data)

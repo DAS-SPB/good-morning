@@ -1,6 +1,7 @@
 import asyncio
 import logging.config
 import yaml
+import os
 
 from aiogram import Bot, Dispatcher
 from config.config import Config, load_config
@@ -9,8 +10,10 @@ from middlewares import outer, inner
 
 
 def setup_logging():
+    config_path = os.path.join('logging_settings', 'logging_config.yaml')
+
     try:
-        with open('logging_config.yaml', 'rt') as f:
+        with open(config_path, 'rt') as f:
             log_config = yaml.safe_load(f.read())
         logging.config.dictConfig(log_config)
     except Exception as e:

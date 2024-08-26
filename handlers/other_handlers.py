@@ -1,11 +1,7 @@
-import logging
-
 from aiogram import Router, F
 from aiogram.types import Message, ContentType
 from lexicon.lexicon import LEXICON_RU
-from logging_module.logging_module import log_incoming_message
-
-logger = logging.getLogger(__name__)
+from logging_settings.logging_module import log_incoming_message
 
 router: Router = Router()
 

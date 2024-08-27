@@ -19,9 +19,15 @@ class BotConfig:
 
 
 @dataclass
+class ExtAPIConfig:
+    cat_api_key: str
+
+
+@dataclass
 class Config:
     tg_bot: BotConfig
     db: DatabaseConfig
+    ext_api: ExtAPIConfig
 
 
 def load_config(path: str | None = None) -> Config:
@@ -40,5 +46,8 @@ def load_config(path: str | None = None) -> Config:
             db_host=env('DB_HOST'),
             db_user=env('DB_USER'),
             db_password=env('DB_PASSWORD')
+        ),
+        ext_api=ExtAPIConfig(
+            cat_api_key=env('CAT_API_KEY')
         )
     )

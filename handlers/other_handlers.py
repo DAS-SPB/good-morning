@@ -1,6 +1,7 @@
 from aiogram import Router, F
 from aiogram.types import Message, ContentType
 from lexicon.lexicon import LEXICON_RU
+from external_api import cats
 from logging_settings.logging_module import log_incoming_message
 
 router: Router = Router()
@@ -24,7 +25,6 @@ async def send_sticker_echo(message: Message):
 async def send_text_echo(message: Message):
     log_incoming_message(message=message, loglevel='info')
 
-    try:
-        await message.send_copy(chat_id=message.chat.id)
-    except TypeError:
-        await message.reply(text=LEXICON_RU['no_echo'])
+    cat_image_url = await cats.get_cat_image()
+
+    await message.answer(text=cat_image_url)

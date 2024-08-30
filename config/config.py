@@ -4,10 +4,7 @@ from environs import Env
 
 @dataclass
 class DatabaseConfig:
-    database: str
-    db_host: str
-    db_user: str
-    db_password: str
+    database_url: str
 
 
 @dataclass
@@ -42,10 +39,7 @@ def load_config(path: str | None = None) -> Config:
             main_user_bd=env('MAIN_USER_BD')
         ),
         db=DatabaseConfig(
-            database=env('DATABASE'),
-            db_host=env('DB_HOST'),
-            db_user=env('DB_USER'),
-            db_password=env('DB_PASSWORD')
+            database_url=env('DATABASE_URL')
         ),
         ext_api=ExtAPIConfig(
             cat_api_key=env('CAT_API_KEY')

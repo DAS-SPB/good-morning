@@ -21,7 +21,7 @@ async def set_user_data(state: bool, chat_id: int, user_id=1, collection=user_da
     try:
         result: UpdateResult = await collection.update_one(
             filter=query,
-            update={"$set": {"is_active": state, "chat_id": str(chat_id)}},
+            update={"$set": {"is_active": state, "chat_id": chat_id}},
             upsert=True
         )
         logger.info(
@@ -47,7 +47,7 @@ async def get_user_state(user_id=1, collection=user_data) -> bool:
     return False
 
 
-async def get_chat_id(user_id=1, collection=user_data) -> str | None:
+async def get_chat_id(user_id=1, collection=user_data) -> int:
     try:
         current_chat_id = await collection.find_one({"user_id": user_id})
         if current_chat_id:
@@ -58,7 +58,7 @@ async def get_chat_id(user_id=1, collection=user_data) -> str | None:
         logger.error(f"MongoDB. Current chat_id can't be fetched: {e}")
         raise Exception
 
-    return None
+    return False
 
 
 # Was used to fill MongoDB with phrases

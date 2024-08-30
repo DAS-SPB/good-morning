@@ -10,7 +10,7 @@ from middlewares import outer
 from notifications.notifications import schedule_messages
 
 
-def setup_logging():
+def setup_logging() -> None:
     config_path = os.path.join('logging_settings', 'logging_config.yaml')
 
     try:
@@ -33,8 +33,8 @@ async def main() -> None:
 
     # Bot initialization
     logger.info("Bot initialization...")
-    bot = Bot(token=config.tg_bot.bot_token)
-    dp = Dispatcher()
+    bot: Bot = Bot(token=config.tg_bot.bot_token)
+    dp: Dispatcher = Dispatcher()
 
     # Registration of routers in dispatcher
     logger.info("Registration of router 'user_handlers'...")

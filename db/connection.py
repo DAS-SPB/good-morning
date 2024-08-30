@@ -10,5 +10,5 @@ uri = config.db.database_url
 client = AsyncIOMotorClient(uri, server_api=ServerApi('1'))
 
 db = client['good-morning-bot']
-user_state = db['user_state']
+user_data = db['user_data']
 phrases = db['phrases']

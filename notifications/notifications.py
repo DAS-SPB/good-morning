@@ -41,7 +41,7 @@ async def send_scheduled_message(user_state: bool, chat_id: int) -> None:
                 cat_image = await get_cat_image()
                 gm_phrase = await get_phrase(phrase_id=await get_random_id())
 
-                # return default gif in case of error on CatAPI side
+                # returns default gif in case of error on the CatAPI side
                 if cat_image.startswith('http'):
                     await bot.send_photo(
                         chat_id=chat_id,

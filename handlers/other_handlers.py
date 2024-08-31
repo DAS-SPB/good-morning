@@ -16,7 +16,7 @@ async def update_image(callback: CallbackQuery):
 
     cat_image = await get_cat_image()
 
-    # return default gif in case of error on the CatAPI side
+    # returns default gif in case of error on the CatAPI side
     if cat_image.startswith('http'):
         await callback.message.edit_media(
             media=InputMediaPhoto(media=cat_image, caption=LEXICON_RU.get('more_button_pressed')),

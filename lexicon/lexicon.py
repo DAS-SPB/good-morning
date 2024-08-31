@@ -5,5 +5,6 @@ LEXICON_RU: dict[str, str] = {
     "/help": "Я просто отправляю вам копию вашего сообщения",
     "unknown_user": "This bot is made exactly for one person. So, your messages will not be proceeded.\n"
                     "Take care of yourself and good luck",
-    "more_button": "Еще!"
+    "more_button": "Еще!",
+    "more_button_pressed": "Глянь, их там ваще много!",
 }

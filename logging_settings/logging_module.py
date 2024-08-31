@@ -19,6 +19,6 @@ def log_incoming_message(message: Message, loglevel: str = 'debug'):
     logger.log(
         loglevel_value,
         f"Received message: from_user.username: {message.from_user.username}, text: {message.text}, "
-        f"is_photo: {bool(message.photo)}, is_sticker: {bool(message.sticker)}, is_video: {bool(message.video)},"
+        f"is_photo: {bool(message.photo)}, is_sticker: {bool(message.sticker)}, is_video: {bool(message.video)}, "
         f"is_voice: {bool(message.voice)}"
     )

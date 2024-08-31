@@ -3,7 +3,7 @@ LEXICON_RU: dict[str, str] = {
               "Если хотите - можете мне что-нибудь прислать или "
               "отправить команду /help",
     "/help": "Я просто отправляю вам копию вашего сообщения",
-    "no_echo": "Данный тип апдейтов не поддерживается "
-               "методом send_copy",
-    "unknown_user": "This bot is made for one person. Take care of yourself and good luck"
+    "unknown_user": "This bot is made exactly for one person. So, your messages will not be proceeded.\n"
+                    "Take care of yourself and good luck",
+    "more_button": "Еще!"
 }

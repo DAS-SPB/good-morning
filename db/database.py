@@ -84,3 +84,16 @@ async def get_phrase(phrase_id: int, collection=phrases) -> str:
         raise Exception
 
     return "Failed to fetch phrase from DB. Please, connect to administrator"
+
+
+async def get_num_of_phrases(collection=phrases) -> int:
+    try:
+        num_of_phrases = await collection.count_documents({})
+        if num_of_phrases:
+            return num_of_phrases
+    except Exception as e:
+        logger.error(f"MongoDB. Phrases can't be counted: {e}")
+        raise Exception
+
+    # '1' returned as default id of phrase in case of unexpected exceptions
+    return 1

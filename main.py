@@ -7,7 +7,7 @@ from aiogram import Bot, Dispatcher
 from config.config import Config, load_config
 from handlers import other_handlers, user_handlers
 from middlewares import outer
-from notifications.notifications import schedule_messages
+from notifications.scheduller import schedule_messages
 
 
 def setup_logging() -> None:

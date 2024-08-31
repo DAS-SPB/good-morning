@@ -7,7 +7,7 @@ from db.connection import user_data, phrases
 logger = logging.getLogger(__name__)
 
 
-# Was used to fill MongoDB with phrases
+# was used to fill MongoDB with phrases
 # phrases_to_db = {
 #     "1": "Example 1",
 #     "2": "Example 2"
@@ -61,7 +61,7 @@ async def get_chat_id(user_id=1, collection=user_data) -> int:
     return False
 
 
-# Was used to fill MongoDB with phrases
+# was used to fill MongoDB with phrases
 # async def insert_phrases(collection=phrases) -> InsertManyResult:
 #     payload = [{"phrase_id": int(phrase_id), "phrase": phrase} for phrase_id, phrase in phrases_to_db.items()]
 #     try:

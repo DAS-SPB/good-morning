@@ -9,6 +9,8 @@ logger = logging.getLogger(__name__)
 cat_api_key = config.ext_api.cat_api_key
 ext_api_url = 'https://api.thecatapi.com/v1/images/search'
 
+default_gif_file_id = 'BQACAgIAAxkBAAPiZtOBIvDwRO2vTu8dn_LsgbXuVhQAAu1UAAJeZqBKzg3Z_CzRRuQ1BA'
+
 
 async def get_cat_image() -> str:
     try:
@@ -22,10 +24,8 @@ async def get_cat_image() -> str:
         else:
             logger.error("Cat API. Incoming response. URL not found in the response.")
 
-            # TODO: return default gif here
-            print(response.status_code)
+            return default_gif_file_id
     except requests.exceptions.RequestException as e:
         logger.error(f"Cat API. Request failed: {e}")
 
-        # TODO: return default gif here
-        return "Cat API. Request failed"
+        return default_gif_file_id

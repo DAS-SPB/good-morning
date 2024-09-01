@@ -1,7 +1,7 @@
 LEXICON_RU: dict[str, str] = {
-    "/start": "Привет!\n\nЯ бот, который иногда писать тебе сообщения!)\n\n"
-              "Если хочешь - можешь мне что-нибудь написать",
-    "/help": "Попробуй прислать фото или стикер. Или даже просто текст",
+    "/start": "Привет!\n\nЯ бот, который будет иногда слать тебе сообщения!\n\n"
+              "Если хочешь, можешь мне что-нибудь написать",
+    "/help": "Попробуй прислать фото или стикер. Или просто отправь текст",
     "unknown_user": "This bot is made exactly for one person. So, your messages will not be proceeded.\n"
                     "Take care of yourself and good luck",
     "more_button": "Еще!",

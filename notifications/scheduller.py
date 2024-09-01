@@ -1,5 +1,6 @@
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
+from pytz import timezone
 
 from db.database import get_user_state, get_chat_id
 from notifications.notifications import send_scheduled_message
@@ -17,6 +18,6 @@ async def scheduled_job() -> None:
 def schedule_messages() -> None:
     scheduler.add_job(
         scheduled_job,
-        trigger=CronTrigger(minute=30),
+        trigger=CronTrigger(hour=10, timezone=timezone('Europe/Moscow')),
     )
     scheduler.start()

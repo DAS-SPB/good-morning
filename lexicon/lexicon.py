@@ -7,5 +7,6 @@ LEXICON_RU: dict[str, str] = {
                     "Take care of yourself and good luck",
     "more_button": "Еще!",
     "more_button_pressed": "Глянь, их там ваще много!",
-    "user_bd": "С ДНЕМ РОЖДЕНИЯ!"
+    "user_bd": "С ДНЕМ РОЖДЕНИЯ!",
+    "openai_no_response": "Бот поглупел, больше не может понимать входящие сообщения... Сообщи администратору, пож"
 }

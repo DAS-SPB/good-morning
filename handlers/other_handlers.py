@@ -4,6 +4,7 @@ from aiogram import Router, F
 from aiogram.types import Message, ContentType, CallbackQuery, InputMediaPhoto, InputMediaAnimation
 from lexicon.lexicon import LEXICON_RU
 from external_api.cats import get_cat_image
+from external_api.openai import chat_with_openai
 from logging_settings.logging_module import log_incoming_message
 
 router: Router = Router()
@@ -49,5 +50,5 @@ async def reply_for_sticker(message: Message):
 async def reply_for_any_other_messages(message: Message):
     log_incoming_message(message=message, loglevel='info')
 
-    await message.answer_document(
-        document='BQACAgIAAxkBAAPgZtOAjpflCJCQxvq9ElSkIWNVdoAAAuZUAAJeZqBKRQIn_UfIMRM1BA')
+    response = await chat_with_openai(message.text)
+    await message.answer(text=response)

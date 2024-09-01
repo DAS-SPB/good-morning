@@ -18,6 +18,7 @@ class BotConfig:
 @dataclass
 class ExtAPIConfig:
     cat_api_key: str
+    openai_api_key: str
 
 
 @dataclass
@@ -42,6 +43,7 @@ def load_config(path: str | None = None) -> Config:
             database_url=env('DATABASE_URL')
         ),
         ext_api=ExtAPIConfig(
-            cat_api_key=env('CAT_API_KEY')
+            cat_api_key=env('CAT_API_KEY'),
+            openai_api_key=env('OPENAI_API_KEY')
         )
     )

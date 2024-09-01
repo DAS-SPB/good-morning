@@ -17,6 +17,6 @@ async def scheduled_job() -> None:
 def schedule_messages() -> None:
     scheduler.add_job(
         scheduled_job,
-        trigger=CronTrigger(second=30),
+        trigger=CronTrigger(minute=30),
     )
     scheduler.start()

@@ -25,6 +25,7 @@ async def get_cat_image() -> str:
             logger.error("Cat API. Incoming response. URL not found in the response.")
 
             return default_gif_file_id
+
     except requests.exceptions.RequestException as e:
         logger.error(f"Cat API. Request failed: {e}")
 

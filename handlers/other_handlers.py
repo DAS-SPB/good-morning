@@ -48,7 +48,12 @@ async def reply_for_sticker(message: Message):
 
 @router.message()
 async def reply_for_any_other_messages(message: Message):
-    log_incoming_message(message=message, loglevel='info')
+    if message.text:
+        log_incoming_message(message=message, loglevel='info')
 
-    response = await chat_with_openai(message.text)
-    await message.answer(text=response)
+        response = await chat_with_openai(message.text)
+        await message.answer(text=response)
+
+    else:
+        await message.answer_sticker(
+            sticker='CAACAgIAAxkBAAPeZtN-9lP4yNqRZvmFZbrQOWNgRzMAAg8VAAJQAAE5SLTQjX7JrCC6NQQ')

@@ -28,7 +28,7 @@ async def chat_with_openai(user_request: str) -> str:
                 "messages": [
                     {
                         "role": "system",
-                        "content": "You are a Russian-speaking chatbot that wishes good morning to one person who loves cats."
+                        "content": "You are a chatbot that wishes a good morning to a cat lover."
                     },
                     {
                         "role": "user",

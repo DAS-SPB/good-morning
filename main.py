@@ -52,7 +52,7 @@ async def main() -> None:
 
     # Skip of accumulated updates and start polling
     await bot.delete_webhook(drop_pending_updates=True)
-    await dp.start_polling(bot)
+    await dp.start_polling(bot, polling_timeout=120)
 
 
 asyncio.run(main())

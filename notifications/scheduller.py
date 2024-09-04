@@ -18,6 +18,7 @@ async def scheduled_job() -> None:
 def schedule_messages() -> None:
     scheduler.add_job(
         scheduled_job,
-        trigger=CronTrigger(hour=10, timezone=timezone('Europe/Moscow'))
+        # trigger=CronTrigger(hour=10, timezone=timezone('Europe/Moscow'))
+        trigger=CronTrigger(second=30)
     )
     scheduler.start()

@@ -17,7 +17,7 @@ handlers:
 
   email:
     class: logging.handlers.SMTPHandler
-    mailhost: smtp.gmail.com
+    mailhost: ['smtp.gmail.com', '587']
     fromaddr: fromaddr@gmail.com
     toaddrs: [ toaddrs@gmail.com ]
     subject: 'GM bot logs'

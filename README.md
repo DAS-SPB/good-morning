@@ -1,10 +1,10 @@
 # Telegram Bot AIOgram
 
-Telegram bot, created for exact one user, that uses integration with OpenAI and CatAPI.
+Telegram bot built for a single user, using OpenAI and CatAPI integration.
 
-Pet project implemented with using of AIOgram, MongoDB.
+Pet project implemented using AIOgram, MongoDB.
 
-Currently deployed to Google Cloud Platform.
+Currently deployed on Google Cloud Platform.
 
 ## Table of Contents
 

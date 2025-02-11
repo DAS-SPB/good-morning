@@ -4,6 +4,7 @@ import yaml
 import os
 
 from aiogram import Bot, Dispatcher
+
 from config.config import Config, load_config
 from handlers import other_handlers, user_handlers
 from middlewares import outer

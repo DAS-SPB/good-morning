@@ -2,6 +2,7 @@ import logging
 
 from aiogram import Router, F
 from aiogram.types import Message, ContentType, CallbackQuery, InputMediaPhoto, InputMediaAnimation
+
 from lexicon.lexicon import LEXICON_RU
 from external_api.cats import get_cat_image
 from external_api.openai import chat_with_openai

@@ -3,6 +3,7 @@ import logging
 from typing import Any, Awaitable, Callable, Dict
 from aiogram import BaseMiddleware
 from aiogram.types import TelegramObject, User
+
 from lexicon.lexicon import LEXICON_RU
 from config.config import Config, load_config
 

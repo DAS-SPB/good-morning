@@ -3,6 +3,7 @@ import logging
 from aiogram import Router
 from aiogram.types import Message, ChatMemberUpdated
 from aiogram.filters import Command
+
 from lexicon.lexicon import LEXICON_RU
 from logging_settings.logging_module import log_incoming_message
 from db.database import set_user_data
